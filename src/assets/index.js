@@ -6,41 +6,39 @@ import slide3 from '../assets/Slider/slide3.svg';
 import slide4 from '../assets/Slider/slide4.svg';
 import slide5 from '../assets/Slider/slide5.svg';
 
-import Product1 from '../assets/New-Arrivals/product1.svg';
-import Product2 from '../assets/New-Arrivals/product2.svg';
-import Product3 from '../assets/New-Arrivals/product3.svg';
-import Product4 from '../assets/New-Arrivals/product4.svg';
+import Product1 from '../assets/NewArrivals/product1.svg';
+import Product2 from '../assets/NewArrivals/product2.svg';
+import Product3 from '../assets/NewArrivals/product3.svg';
+import Product4 from '../assets/NewArrivals/product4.svg';
 
-import TopSelling1 from '../assets/Top-selling/top-selling1.svg';
-import TopSelling2 from '../assets/Top-selling/top-selling2.svg';
-import TopSelling3 from '../assets/Top-selling/top-selling3.svg';
-import TopSelling4 from '../assets/Top-selling/top-selling4.svg';
+import TopSelling1 from '../assets/TopSelling/top1.svg';
+import TopSelling2 from '../assets/TopSelling/top2.svg';
+import TopSelling3 from '../assets/TopSelling/top3.svg';
+import TopSelling4 from '../assets/TopSelling/top4.svg';
 
-import Men1 from '../assets/Men’s-Products/Men’s-Products-1.svg'
-import Men2 from '../assets/Men’s-Products/Men’s-Products-2.svg'
-import Men3 from '../assets/Men’s-Products/Men’s-Products-3.svg'
-import Men4 from '../assets/Men’s-Products/Men’s-Products-4.svg'
+import Men1 from '../assets/Men/men1.svg'
+import Men2 from '../assets/Men/men2.svg'
+import Men3 from '../assets/Men/men3.svg'
+import Men4 from '../assets/Men/men4.svg'
 
 import Frame1 from '../assets/Frame/frame1.svg';
 import Frame2 from '../assets/Frame/frame2.svg';
 import Frame3 from '../assets/Frame/frame3.svg';
 import Frame4 from '../assets/Frame/frame4.svg';
 
+import row1 from '../assets/ProductDeatills/row1.svg';
+import row2 from '../assets/ProductDeatills/row2.svg';
+import row3 from '../assets/ProductDeatills/row3.svg';
+import frontImg from '../assets/ProductDeatills/front.svg';
 
+import detailsProduct1 from '../assets/SuggestionProduct/suggestion1.svg'
+import detailsProduct2 from '../assets/SuggestionProduct/suggestion2.svg'
+import detailsProduct3 from '../assets/SuggestionProduct/suggestion3.svg'
+import detailsProduct4 from '../assets/SuggestionProduct/suggestion4.svg'
 
-import row1 from '../assets/Product-Deatills/row1.svg';
-import row2 from '../assets/Product-Deatills/row2.svg';
-import row3 from '../assets/Product-Deatills/row3.svg';
-import frontImg from '../assets/Product-Deatills/front-img.svg';
-
-import detailsProduct1 from '../assets/DeatilsProduct/DeatilsProduct1.svg'
-import detailsProduct2 from '../assets/DeatilsProduct/DeatilsProduct2.svg'
-import detailsProduct3 from '../assets/DeatilsProduct/DeatilsProduct3.svg'
-import detailsProduct4 from '../assets/DeatilsProduct/DeatilsProduct4.svg'
-
-import Cart1 from '../assets/CartProduct/Cart1.svg'
-import Cart2 from '../assets/CartProduct/Cart2.svg'
-import Cart3 from '../assets/CartProduct/Cart3.svg'
+import Cart1 from '../assets/CartProduct/cart1.svg'
+import Cart2 from '../assets/CartProduct/cart2.svg'
+import Cart3 from '../assets/CartProduct/cart3.svg'
 
 
 export {
