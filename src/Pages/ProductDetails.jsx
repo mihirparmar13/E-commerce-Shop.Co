@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { row1, row2, row3, frontImg } from '../assets/index.js'
+import { useState } from 'react'
 import { MdOutlineSettingsInputComponent } from 'react-icons/md'
 import { FaCheck, FaCheckCircle, FaChevronDown } from 'react-icons/fa'
 import { FiMoreHorizontal, FiShoppingCart } from 'react-icons/fi'

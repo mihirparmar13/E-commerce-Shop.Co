@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaCcApplePay, FaCcPaypal, FaCcVisa, FaFacebook, FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa'
 
 

@@ -1,6 +1,3 @@
-import React from 'react'
-import Footer from '../Common/Footer.jsx'
-import Header from '../Common/Header.jsx'
 import Reviews from '../Components/Reviews .jsx'
 import DressStyle from '../Components/DressStyle.jsx'
 import Hero from '../Components/Hero .jsx'

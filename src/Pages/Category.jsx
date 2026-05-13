@@ -1,12 +1,8 @@
-import React from 'react'
-import Header from '../Common/Header'
-import Footer from '../Common/Footer'
-
 import CategoryProductDetails from '../Components/CategoryProductDetails.jsx'
 import { GiSettingsKnobs } from 'react-icons/gi'
 import { FaChevronRight } from 'react-icons/fa'
 import { IoArrowUpSharp } from 'react-icons/io5'
-import { products, filters, cartItems } from '../data.js'
+import { products, filters } from '../data.js'
 
 const Category = () => {
 

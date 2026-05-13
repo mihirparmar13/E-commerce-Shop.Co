@@ -1,4 +1,3 @@
-import React from 'react'
 import { dressStyleFrames } from '../data.js'
 
 function DressStyle() {

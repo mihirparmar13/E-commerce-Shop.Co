@@ -1,10 +1,5 @@
-import React from 'react'
-import Header from '../Common/Header'
-import Footer from '../Common/Footer'
-
 import { RiDeleteBin5Fill } from 'react-icons/ri'
 import { FiArrowRight } from 'react-icons/fi'
-import { cartItems } from '../data.js'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteCart, ChangeQuantity } from '../Feature/cartSlice.js'
 import { Link } from 'react-router-dom'

@@ -1,4 +1,4 @@
-import heroImg from '../assets/Hero/Hero-Section.svg';
+import heroImg from '../assets/Hero/hero.svg';
 
 import slide1 from '../assets/Slider/slide1.svg';
 import slide2 from '../assets/Slider/slide2.svg';

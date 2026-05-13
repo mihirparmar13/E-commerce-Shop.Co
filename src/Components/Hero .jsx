@@ -1,6 +1,4 @@
-import React from 'react'
-
-import { heroImg, slide1, slide2, slide3, slide4, slide5, } from '../assets/index.js'
+import { heroImg } from '../assets/index.js'
 import { heroData, brandLogos } from '../data.js'
 
 function Hero() {

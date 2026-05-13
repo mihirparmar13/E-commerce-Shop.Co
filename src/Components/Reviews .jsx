@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaCheckCircle } from 'react-icons/fa'
 import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri'
 import { customerReviews } from '../data.js'
