@@ -19,9 +19,6 @@ import {
     detailsProduct2,
     detailsProduct3,
     detailsProduct4,
-    Cart1,
-    Cart2,
-    Cart3,
     slide1,
     slide2,
     slide3,
@@ -170,7 +167,7 @@ export const products = {
             discount: '$188',
             off: '-30%',
             rating: '4.5/5',
-            img: Men1 
+            img: Men1
         },
         {
             id: 18,
@@ -179,96 +176,67 @@ export const products = {
             discount: '$138',
             off: '-30%',
             rating: '3.5/5',
-            img: Men3 
+            img: Men3
         },
         {
-            id: 19 ,
+            id: 19,
             title: 'The Organic Cotton Long-Sleeve Turtleneck',
             price: '$35',
             discount: '$50',
             off: '-30%',
             rating: '3.5/5',
-            img: Men2 
+            img: Men2
         },
         {
-            id: 20 ,
+            id: 20,
             title: 'The Wool Flannel Pant',
             price: '$97',
             discount: '$138',
             off: '-30%',
             rating: '3.5/5',
-            img: Men4 
+            img: Men4
         }
     ],
     Girls: [
-    {
-        id: 21,
-        title: 'The Floral Summer Dress',
-        price: '$89',
-        discount: '$120',
-        off: '-25%',
-        rating: '4.8/5',
-        img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f'
-    },
-    {
-        id: 22,
-        title: 'The Oversized Pink Hoodie',
-        price: '$76',
-        discount: '$110',
-        off: '-30%',
-        rating: '4.6/5',
-        img: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b'
-    },
-    {
-        id: 23,
-        title: 'The Elegant Satin Skirt',
-        price: '$58',
-        discount: '$82',
-        off: '-29%',
-        rating: '4.4/5',
-        img: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c'
-    },
-    {
-        id: 24,
-        title: 'The Casual Denim Jacket',
-        price: '$105',
-        discount: '$145',
-        off: '-28%',
-        rating: '4.7/5',
-        img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b'
-    }
-]
+        {
+            id: 21,
+            title: 'The Floral Summer Dress',
+            price: '$89',
+            discount: '$120',
+            off: '-25%',
+            rating: '4.8/5',
+            img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f'
+        },
+        {
+            id: 22,
+            title: 'The Oversized Pink Hoodie',
+            price: '$76',
+            discount: '$110',
+            off: '-30%',
+            rating: '4.6/5',
+            img: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b'
+        },
+        {
+            id: 23,
+            title: 'The Elegant Satin Skirt',
+            price: '$58',
+            discount: '$82',
+            off: '-29%',
+            rating: '4.4/5',
+            img: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c'
+        },
+        {
+            id: 24,
+            title: 'The Casual Denim Jacket',
+            price: '$105',
+            discount: '$145',
+            off: '-28%',
+            rating: '4.7/5',
+            img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b'
+        }
+    ]
 }
 
-export const cartItems = [
-    {
-        id: 1,
-        img: Cart1,
-        title: 'Gradient Graphic T-shirt',
-        size: 'Large',
-        Color: 'White',
-        price: '$145',
-        quantity: 1
-    },
-    {
-        id: 2,
-        img: Cart2,
-        title: 'CHECKERED SHIRT',
-        size: 'Medium',
-        Color: 'Red',
-        price: '$180',
-        quantity: 1
-    },
-    {
-        id: 3,
-        img: Cart3,
-        title: 'SKINNY FIT JEANS',
-        size: 'Large',
-        Color: 'Blue',
-        price: '$240',
-        quantity: 1
-    }
-]
 
 export const filters = {
     categories: ['T-shirts', 'Shorts', 'Shirts', 'Hoodie', 'Jeans'],
