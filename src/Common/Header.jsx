@@ -11,6 +11,8 @@ import SearchNav from './SearchNav'
 function Header() {
     const [search, setSearch] = useState("");
 
+    const [showHeader, setShowHeader] = useState(true);
+
     const cartItems = useSelector((state) => state.cart.cartItems);
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,20 +37,26 @@ function Header() {
     const handleLogout = (e) => {
         e.preventDefault();
         localStorage.removeItem("isLogin");
-        navigate("/login");
+        navigate("/");
     }
 
     return (
         <div>
-            <div className='top-header-section bg-black text-white text-center py-2 text-sm'>
-                <div className='container mx-auto flex items-center'>
-                    <div className='justify-center w-full'>
-                        <p className='text-white text-center py-2'>Sign up and get 20% off to your first order. <a href="#" className=' underline'>Sign Up Now</a></p>
+            <div >
+                {showHeader && (
+                    <div className='top-header-section bg-black text-white text-center py-2 text-sm'>
+                        <div className='container mx-auto flex items-center'>
+                            <div className='justify-center w-full'>
+                                <p className='text-white text-center py-2'>Sign up and get 20% off to your first order. <Link to={"/"} className=' underline'>Sign Up Now</Link></p>
+                            </div>
+                            <div className=' '>
+                                <IoClose
+                                    onClick={() => setShowHeader(false)}
+                                    className='text-white text-2xl cursor-pointer ' />
+                            </div>
+                        </div>
                     </div>
-                    <div className=' '>
-                        <IoClose className='text-white text-2xl cursor-pointer ' />
-                    </div>
-                </div>
+                )}
             </div>
 
             <div className='bottom-header-section py-4 px-4 sm:px-6 md:px-8'>
@@ -59,7 +67,7 @@ function Header() {
                         <SideNav setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
                     </div>
 
-                    <Link to="/">
+                    <Link to="/home">
                         <h1
                             className="text-2xl sm:text-3xl font-bold text-gray-800 cursor-pointer"
                             style={{ fontFamily: "Integral CF" }}
@@ -71,7 +79,7 @@ function Header() {
                     <div className='hidden md:flex items-center gap-6 lg:gap-10 flex-1 justify-center'>
 
                         <ul className='flex gap-6 lg:gap-9 items-center'>
-                            <li><Link to={"/"} className="text-gray-800 hover:text-gray-600 text-sm lg:text-base">Home</Link></li>
+                            <li><Link to={"/home"} className="text-gray-800 hover:text-gray-600 text-sm lg:text-base">Home</Link></li>
                             <li><Link to={"/category"} className='text-gray-800 hover:text-gray-600 text-sm lg:text-base'>Collections</Link></li>
                             <li><a href="#" className='text-gray-800 hover:text-gray-600 text-sm lg:text-base'>New Arrivals</a></li>
                             <li><a href="#" className='text-gray-800 hover:text-gray-600 text-sm lg:text-base'>Brands</a></li>

@@ -30,7 +30,7 @@ function Login() {
         if (storedUser && storedUser.email === loginData.email && storedUser.password === loginData.password) {
             localStorage.setItem("isLogin", true);
             toast("Login Successful")
-            navigate("/");
+            navigate("home");
         } else {
             toast("Invalid Email or Password")
         }

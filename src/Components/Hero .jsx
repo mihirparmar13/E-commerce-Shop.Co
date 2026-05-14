@@ -1,7 +1,7 @@
 import { heroImg } from '../assets/index.js'
 import { heroData, brandLogos } from '../data.js'
 
-function Hero() {
+function Hero({ scrollToProducts }) {
     return (
         <div>
             <div className='hero-section' >
@@ -23,6 +23,7 @@ function Hero() {
                                 <button
                                     className="bg-black text-white sm:w-[210px] h-[48px] sm:h-[52px] px-[54px] py-[16px] rounded-full text-sm font-medium "
                                     style={{ fontFamily: "Satoshi" }}
+                                     onClick={scrollToProducts}
                                 >
                                     {heroData.buttonText}
                                 </button>

@@ -91,7 +91,7 @@ function Cart() {
                                         Looks like you haven’t added anything to your cart yet.
                                     </p>
 
-                                    <Link to="/">
+                                    <Link to="/home">
                                         <button className="mt-6 bg-black text-white px-6 py-3 rounded-full text-sm font-medium">
                                             Continue Shopping
                                         </button>

@@ -31,11 +31,11 @@ function App() {
     <Provider store={store}>
       <ToastContainer position="bottom-right" autoClose={2000} theme="dark" />
       <Routes>
-        <Route path='login' element={<Login />} />
+        <Route index element={<Login />} />
         <Route path='singup' element={<SingUp />} />
-        <Route path='/' element={<Layout />}>
 
-          <Route index element={
+        <Route path='/' element={<Layout />}>
+          <Route path='home' element={
             <ProtectedRoute>
               <Home />
             </ProtectedRoute>

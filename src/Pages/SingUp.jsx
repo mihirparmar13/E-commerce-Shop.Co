@@ -28,7 +28,7 @@ function SingUp() {
         localStorage.setItem("USER", JSON.stringify(formData));
         localStorage.setItem("isLogin", true);
         toast("Signup Successful");
-        navigate("/");
+       navigate("/home");
     }
 
     return (
@@ -113,7 +113,7 @@ function SingUp() {
                     <p className="text-center text-sm text-gray-600">
                         Already have an account?{" "}
                         <Link
-                            to="/Login"
+                            to="/"
                             className="text-orange-500 font-semibold hover:text-orange-600"
                         >
                             Login
