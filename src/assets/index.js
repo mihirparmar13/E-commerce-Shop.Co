@@ -36,9 +36,7 @@ import detailsProduct2 from '../assets/SuggestionProduct/suggestion2.svg'
 import detailsProduct3 from '../assets/SuggestionProduct/suggestion3.svg'
 import detailsProduct4 from '../assets/SuggestionProduct/suggestion4.svg'
 
-import Cart1 from '../assets/CartProduct/cart1.svg'
-import Cart2 from '../assets/CartProduct/cart2.svg'
-import Cart3 from '../assets/CartProduct/cart3.svg'
+
 
 
 export {
@@ -72,7 +70,5 @@ export {
     detailsProduct2,
     detailsProduct3,
     detailsProduct4,
-    Cart1,
-    Cart2,
-    Cart3
+  
 }
