@@ -37,7 +37,7 @@ function Header() {
     const handleLogout = (e) => {
         e.preventDefault();
         localStorage.removeItem("isLogin");
-        navigate("/");
+        navigate("/login");
     }
 
     return (
@@ -67,7 +67,7 @@ function Header() {
                         <SideNav setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
                     </div>
 
-                    <Link to="/home">
+                    <Link to="/">
                         <h1
                             className="text-2xl sm:text-3xl font-bold text-gray-800 cursor-pointer"
                             style={{ fontFamily: "Integral CF" }}
@@ -79,7 +79,7 @@ function Header() {
                     <div className='hidden md:flex items-center gap-6 lg:gap-10 flex-1 justify-center'>
 
                         <ul className='flex gap-6 lg:gap-9 items-center'>
-                            <li><Link to={"/home"} className="text-gray-800 hover:text-gray-600 text-sm lg:text-base">Home</Link></li>
+                            <li><Link to={"/"} className="text-gray-800 hover:text-gray-600 text-sm lg:text-base">Home</Link></li>
                             <li><Link to={"/category"} className='text-gray-800 hover:text-gray-600 text-sm lg:text-base'>Collections</Link></li>
                             <li><a href="#" className='text-gray-800 hover:text-gray-600 text-sm lg:text-base'>New Arrivals</a></li>
                             <li><a href="#" className='text-gray-800 hover:text-gray-600 text-sm lg:text-base'>Brands</a></li>

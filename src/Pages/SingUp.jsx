@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FiMail, FiLock, FiUser } from "react-icons/fi";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function SingUp() {
@@ -26,10 +26,17 @@ function SingUp() {
     const handleSignup = (e) => {
         e.preventDefault();
         localStorage.setItem("USER", JSON.stringify(formData));
-        localStorage.setItem("isLogin", true);
+        localStorage.setItem("isLogin", "true");
         toast("Signup Successful");
-       navigate("/home");
+       navigate("/");
     }
+
+     const isLogin = localStorage.getItem("isLogin");
+
+    // If already logged in
+    if (isLogin) {
+        return <Navigate to="/" replace />;
+    } 
 
     return (
         <div className="min-h-screen bg-[#f5f5f5] flex items-center justify-center px-4">
@@ -113,7 +120,7 @@ function SingUp() {
                     <p className="text-center text-sm text-gray-600">
                         Already have an account?{" "}
                         <Link
-                            to="/"
+                            to="/login"
                             className="text-orange-500 font-semibold hover:text-orange-600"
                         >
                             Login

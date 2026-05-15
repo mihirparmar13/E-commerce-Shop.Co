@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FiMail, FiLock } from "react-icons/fi";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function Login() {
@@ -28,12 +28,19 @@ function Login() {
         const storedUser = JSON.parse(localStorage.getItem("USER"));
 
         if (storedUser && storedUser.email === loginData.email && storedUser.password === loginData.password) {
-            localStorage.setItem("isLogin", true);
+            localStorage.setItem("isLogin", "true");
             toast("Login Successful")
-            navigate("home");
+            navigate("/");
         } else {
             toast("Invalid Email or Password")
         }
+    }
+
+     const isLogin = localStorage.getItem("isLogin");
+
+    // If already logged in
+    if (isLogin) {
+        return <Navigate to="/" replace />;
     }
 
     return (

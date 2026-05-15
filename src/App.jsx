@@ -30,12 +30,16 @@ function App() {
   return (
     <Provider store={store}>
       <ToastContainer position="bottom-right" autoClose={2000} theme="dark" />
+
       <Routes>
-        <Route index element={<Login />} />
+        
+        <Route path='login' element={<Login />} />
         <Route path='singup' element={<SingUp />} />
 
         <Route path='/' element={<Layout />}>
-          <Route path='home' element={
+
+
+          <Route path='/' element={
             <ProtectedRoute>
               <Home />
             </ProtectedRoute>

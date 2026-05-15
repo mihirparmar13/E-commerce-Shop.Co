@@ -1,16 +1,18 @@
 
-import { useNavigate } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 
 const ProtectedRoute = ({ children }) => {
 
-    const navigate = useNavigate()
+   
 
     const isLogin = localStorage.getItem("isLogin")
-    
+
+   
+
     return (
         <div>
             {
-                isLogin ? children : navigate("/login")
+                isLogin ? children : <Navigate to="/login" replace />
             }
         </div>
     )
