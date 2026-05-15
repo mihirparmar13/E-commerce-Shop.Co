@@ -27,19 +27,19 @@ function ProductCard({ title = "", products = [] },) {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8 p-4">
                 {products.map((product) => (
                     <div key={product.id}
-                        className="w-full cursor-pointer"
+                        className="w-full cursor-pointer group"
                         onClick={() => handleClick(product)}>
 
                         <div className="w-full h-[360px] bg-[#F0F0F0] rounded-[12px] overflow-hidden">
                             <img
                                 src={product.img}
                                 alt={product.title}
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
                             />
                         </div>
 
                         <div className="pt-3 flex flex-col gap-1">
-                            <h3 className="text-[20px] font-bold hover:font-medium text-gray-800">
+                            <h3 className="text-[20px] font-bold text-gray-900 group-hover:text-black transition">
                                 {product.title}
                             </h3>
 

@@ -18,7 +18,7 @@ function Home() {
         });
     };
 
-    const newArrivals = products.newArrivals;
+    const newArrivals = products.newArrivals.slice(0, 4);
     const topSelling = products.topSelling;
     const menProducts = products.Men;
     const girlsProduct = products.Girls;

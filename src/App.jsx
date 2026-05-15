@@ -1,5 +1,5 @@
 
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 import Cart from './Pages/Cart'
 import Category from './Pages/Category'
@@ -14,10 +14,14 @@ import 'react-toastify/dist/ReactToastify.css'
 import Login from './Pages/Login'
 import SingUp from './Pages/SingUp'
 import ProtectedRoute from './Common/ProtectedRoute'
+import NotFound from './Pages/NotFound'
+import NewArrivals from './Pages/NewArrivals'
 
 function App() {
 
   const { pathname } = useLocation();
+
+    const isLogin = localStorage.getItem("isLogin");
 
   useEffect(() => {
 
@@ -33,13 +37,13 @@ function App() {
 
       <Routes>
         
-        <Route path='login' element={<Login />} />
-        <Route path='singup' element={<SingUp />} />
+        <Route path='login' element={ isLogin ? <Navigate to="/" replace /> : <Login />} />
+        <Route path='singup' element={isLogin ? <Navigate to="/" replace /> : <SingUp />} />
 
-        <Route path='/' element={<Layout />}>
+        <Route path='/' element={ <Layout />}>
 
 
-          <Route path='/' element={
+          <Route index element={
             <ProtectedRoute>
               <Home />
             </ProtectedRoute>
@@ -53,6 +57,13 @@ function App() {
           }
           />
 
+          <Route path='newarrivals' element={
+            <ProtectedRoute>
+              <NewArrivals/>
+            </ProtectedRoute>
+          }
+          />
+
           <Route path='cart' element={
             <ProtectedRoute>
               <Cart />
@@ -60,7 +71,7 @@ function App() {
           }
           />
 
-          <Route path='/product/:id' element={
+          <Route path='product/:id' element={
             <ProtectedRoute>
               <ProductDetails />
             </ProtectedRoute>
@@ -68,6 +79,8 @@ function App() {
           />
 
         </Route>
+
+         <Route path='*' element={<NotFound />} />
       </Routes>
     </Provider>
   )

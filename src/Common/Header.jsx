@@ -81,7 +81,7 @@ function Header() {
                         <ul className='flex gap-6 lg:gap-9 items-center'>
                             <li><Link to={"/"} className="text-gray-800 hover:text-gray-600 text-sm lg:text-base">Home</Link></li>
                             <li><Link to={"/category"} className='text-gray-800 hover:text-gray-600 text-sm lg:text-base'>Collections</Link></li>
-                            <li><a href="#" className='text-gray-800 hover:text-gray-600 text-sm lg:text-base'>New Arrivals</a></li>
+                            <li><Link to={"/newarrivals"} className='text-gray-800 hover:text-gray-600 text-sm lg:text-base'>New Arrivals</Link></li>
                             <li><a href="#" className='text-gray-800 hover:text-gray-600 text-sm lg:text-base'>Brands</a></li>
                         </ul>
 
