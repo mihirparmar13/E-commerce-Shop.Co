@@ -49,7 +49,7 @@ function SideNav({ setIsMenuOpen, isMenuOpen }) {
                                 Collections
                             </Link>
                             <Link
-
+                                 to="/newarrivals"
                                 onClick={() => setIsMenuOpen(false)}
                                 className="text-gray-800 hover:text-gray-600"
                             >
