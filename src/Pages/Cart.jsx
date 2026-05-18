@@ -9,15 +9,13 @@ import { toast } from 'react-toastify'
 
 function Cart() {
 
-
-
     const CartProduct = useSelector((state) => state.cart.cartItems)
 
-    console.log(CartProduct)
+    // console.log(CartProduct)
 
     const dispatch = useDispatch()
 
-    const handleQuantity = (id, quantity, type) => {
+    const handleQuantity = (cartId, quantity, type) => {
 
         let finalQuantity = quantity;
 
@@ -27,13 +25,13 @@ function Cart() {
             finalQuantity = finalQuantity - 1;
         }
 
-        dispatch(ChangeQuantity({ id, finalQuantity }));
+        dispatch(ChangeQuantity({ cartId, finalQuantity }));
     };
 
 
-    const handleRemoveFromCart = (id) => {
+    const handleRemoveFromCart = (cartId) => {
         if (confirm("Are you sure..!")) {
-            dispatch(deleteCart(id))
+            dispatch(deleteCart(cartId))
             toast.success("Item removed from cart 🗑️")
         }
     }
@@ -143,7 +141,7 @@ function Cart() {
 
 
                                             <RiDeleteBin5Fill
-                                                onClick={() => handleRemoveFromCart(items.id)}
+                                                onClick={() => handleRemoveFromCart(items.cartId)}    
                                                 className="text-red-500 cursor-pointer transition"
                                                 size={20}
                                             />
@@ -151,7 +149,7 @@ function Cart() {
 
                                             <div className="flex items-center bg-[#F0F0F0] rounded-full px-4 py-1 gap-3 sm:gap-4 mt-4">
                                                 <button
-                                                    onClick={() => handleQuantity(items.id, items.quantity, "-")}
+                                                    onClick={() => handleQuantity(items.cartId, items.quantity, "-")}
                                                     type="button"
                                                     id="decrement-button"
                                                     data-input-counter-decrement="counter-input"
@@ -162,7 +160,7 @@ function Cart() {
                                                     {items.quantity}
                                                 </span>
                                                 <button
-                                                    onClick={() => handleQuantity(items.id, items.quantity, "+")}
+                                                    onClick={() => handleQuantity(items.cartId, items.quantity, "+")}
                                                     type="button"
                                                     id="increment-button"
                                                     data-input-counter-increment="counter-input"

@@ -1,6 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const saveCart = JSON.parse(localStorage.getItem("CART")) || []
+const saveCart = (JSON.parse(localStorage.getItem("CART")) || []).map((item) => 
+    item
+        ? {
+            ...item,
+            cartId :
+                item.cartId ??  `${item.id}-${item.size}-${item.color?.code || item.color}`,
+        }
+        : item
+)
+
 
 export const cartSlice = createSlice({
 
@@ -15,18 +24,30 @@ export const cartSlice = createSlice({
     reducers: {
 
         addToCart: (state, action) => {
+            
+            const existingIndex = state.cartItems.findIndex(
+                (item) => item.cartId === action.payload.cartId
+            );
 
-            state.cartItems = [action.payload, ...state.cartItems];
-
+            if (existingIndex >= 0) {
+                    state.cartItems[existingIndex].quantity += action.payload.quantity
+            } else {
+                state.cartItems = [action.payload, ...state.cartItems];
+            }
             localStorage.setItem(
                 "CART",
-                JSON.stringify(state.cartItems)
-            );
+                 JSON.stringify(state.cartItems));
+            // state.cartItems = [action.payload, ...state.cartItems];
+
+            // localStorage.setItem(
+            //     "CART",
+            //     JSON.stringify(state.cartItems)
+            // );
         },
 
         deleteCart: (state, action) => {
 
-            state.cartItems = state.cartItems.filter((item) => item.id !== action.payload);
+            state.cartItems = state.cartItems.filter((item) => item.cartId !== action.payload);
 
             localStorage.setItem(
                 "CART",
@@ -36,10 +57,10 @@ export const cartSlice = createSlice({
 
         ChangeQuantity: (state, action) => {
 
-            const { id, finalQuantity } = action.payload;
+            const { cartId, finalQuantity } = action.payload;
 
             state.cartItems = state.cartItems.map((item) =>
-                item.id === id
+                item.cartId === cartId
                     ? { ...item, quantity: finalQuantity }
                     : item
             );

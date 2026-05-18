@@ -5,7 +5,7 @@ const CategoryProductDetails = ({ Products = [] }) => {
     const navigate = useNavigate();
 
     const handleClick = (product) => {
-        navigate(`/product/${product.id}`);
+        navigate(`/product/${product.id}` );
 
     };
 

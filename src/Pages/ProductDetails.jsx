@@ -27,24 +27,32 @@ function ProductDetails() {
     const [selectedSize, setSelectedSize] = useState("Large")
 
 
-
     const dispatch = useDispatch();
 
     const Cart = useSelector((state) => state.cart.cartItems);
 
+    const cartId = `${id}-${selectedSize}-${selectedColor.code}`;
 
     const CheckCart = Cart.find(
         (obj) =>
-            obj.id == id &&
-            obj.size === selectedSize &&
-            obj.color.code === selectedColor.code
-    )
+            obj.cartId === cartId
+    );
 
     // console.log(CheckCart)
+
+    // const CheckCart = Cart.find(
+    //     (obj) =>
+    //         obj.id == id &&
+    //         obj.size === selectedSize &&
+    //         obj.color.code === selectedColor.code
+    // )
+
+    //  console.log(CheckCart)
 
     const handleAddToCart = () => {
 
         const cartProduct = {
+            cartId,
             id: product.id,
             title: product.title,
             price: product.price,
@@ -56,20 +64,20 @@ function ProductDetails() {
             },
             quantity: 1
         };
-        
+
         dispatch(addToCart(cartProduct));
         toast.success("Item added to cart successfully!")
     };
 
     const handleRemoveToCart = () => {
         if (confirm("Are you sure..!")) {
-            dispatch(deleteCart(product.id))
+            dispatch(deleteCart(cartId))
             toast.success("Item removed from cart 🗑️")
         }
     }
 
 
-    const handleQuantity = (id, quantity, type) => {
+    const handleQuantity = (cartId, quantity, type) => {
 
         let finalQuantity = quantity;
 
@@ -79,7 +87,7 @@ function ProductDetails() {
             finalQuantity = finalQuantity - 1;
         }
 
-        dispatch(ChangeQuantity({ id, finalQuantity }));
+        dispatch(ChangeQuantity({ cartId, finalQuantity }));
     };
 
 
@@ -227,8 +235,9 @@ function ProductDetails() {
 
                                     <div className="flex items-center border rounded-full px-7 py-1 gap-4 shrink-0 bg-[#F0F0F0]">
                                         <button
-                                            onClick={() => handleQuantity(CheckCart.id, CheckCart.quantity, "-")}
+                                            onClick={() => handleQuantity( CheckCart && CheckCart.cartId, CheckCart.quantity, "-")}
                                             type="button"
+                                            disabled={!CheckCart}
                                             id="decrement-button"
                                             data-input-counter-decrement="counter-input"
                                             className='text-lg'
@@ -239,8 +248,9 @@ function ProductDetails() {
                                             {CheckCart ? CheckCart.quantity : 1}
                                         </span>
                                         <button
-                                            onClick={() => handleQuantity(CheckCart.id, CheckCart.quantity, "+")}
+                                            onClick={() => handleQuantity( CheckCart && CheckCart.cartId, CheckCart.quantity, "+")}
                                             type="button"
+                                            disabled={!CheckCart}
                                             id="increment-button"
                                             data-input-counter-increment="counter-input"
                                             data-input-counter-decrement="counter-input"

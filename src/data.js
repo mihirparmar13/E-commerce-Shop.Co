@@ -65,7 +65,7 @@ export const products = {
     ],
     topSelling: [
         {
-            id: 21,
+            id: 5,
             title: 'VERTICAL STRIPED SHIRT',
             price: '$212',
             discount: '$232',
@@ -74,21 +74,21 @@ export const products = {
             img: TopSelling1
         },
         {
-            id: 22,
+            id: 6,
             title: 'COURAGE GRAPHIC T-SHIRT',
             price: '$145',
             rating: '4.0/5',
             img: TopSelling2
         },
         {
-            id: 23,
+            id:7,
             title: 'LOOSE FIT BERMUDA SHORTS',
             price: '$80',
             rating: '3.0/5',
             img: TopSelling3
         },
         {
-            id: 24,
+            id: 8,
             title: 'FADED SKINNY JEANS',
             price: '$210',
             rating: '4.5/5',
@@ -97,21 +97,21 @@ export const products = {
     ],
     casual: [
         {
-            id: 25,
+            id: 9,
             title: 'Gradient Graphic T-shirt',
             price: '$145',
             rating: '3.5/5',
             img: detailsProduct2
         },
         {
-            id: 26,
+            id: 10,
             title: 'Polo with Tipping Details',
             price: '$180',
             rating: '4.5/5',
             img: detailsProduct3
         },
         {
-            id: 27,
+            id: 11,
             title: 'Black Striped T-shirt',
             price: '$120',
             discount: '$150',
@@ -120,7 +120,7 @@ export const products = {
             img: detailsProduct4
         },
         {
-            id: 28,
+            id: 12,
             title: 'SIMPLE T-SHIRT',
             price: '$130',
             rating: '4.2/5',
@@ -129,7 +129,7 @@ export const products = {
     ],
     details: [
         {
-            id: 29,
+            id: 13,
             title: 'Polo with Contrast Trims',
             price: '$212',
             discount: '$242',
@@ -138,21 +138,21 @@ export const products = {
             img: detailsProduct1
         },
         {
-            id: 30,
+            id: 14,
             title: 'Gradient Graphic T-shirt',
             price: '$145',
             rating: '3.5/5',
             img: detailsProduct2
         },
         {
-            id: 31,
+            id: 15,
             title: 'Polo with Tipping Details',
             price: '$180',
             rating: '4.5/5',
             img: detailsProduct3
         },
         {
-            id: 32,
+            id: 16,
             title: 'Black Striped T-shirt',
             price: '$120',
             discount: '$150',
@@ -163,7 +163,7 @@ export const products = {
     ],
     Men: [
         {
-            id: 33,
+            id: 16,
             title: 'The Cloud Relaxed Cardigan',
             price: '$132',
             discount: '$188',
@@ -172,7 +172,7 @@ export const products = {
             img: Men1
         },
         {
-            id: 34,
+            id: 17,
             title: 'The Wool Flannel Pant',
             price: '$97',
             discount: '$138',
@@ -181,7 +181,7 @@ export const products = {
             img: Men3
         },
         {
-            id: 35,
+            id: 18,
             title: 'The Organic Cotton Long-Sleeve Turtleneck',
             price: '$35',
             discount: '$50',
@@ -190,7 +190,7 @@ export const products = {
             img: Men2
         },
         {
-            id: 36,
+            id: 19,
             title: 'The Wool Flannel Pant',
             price: '$97',
             discount: '$138',
@@ -201,7 +201,7 @@ export const products = {
     ],
     Girls: [
         {
-            id: 37,
+            id: 20,
             title: 'The Floral Summer Dress',
             price: '$89',
             discount: '$120',
@@ -210,7 +210,7 @@ export const products = {
             img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f'
         },
         {
-            id: 38,
+            id: 21,
             title: 'The Oversized Pink Hoodie',
             price: '$76',
             discount: '$110',
@@ -219,7 +219,7 @@ export const products = {
             img: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b'
         },
         {
-            id: 38,
+            id: 22,
             title: 'The Elegant Satin Skirt',
             price: '$58',
             discount: '$82',
@@ -228,7 +228,7 @@ export const products = {
             img: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c'
         },
         {
-            id: 39,
+            id: 23,
             title: 'The Casual Denim Jacket',
             price: '$105',
             discount: '$145',
