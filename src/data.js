@@ -236,9 +236,9 @@ export const products = {
             rating: '4.7/5',
             img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b'
         }
-    ]
+    ],
 }
-
+ 
 
 export const filters = {
     categories: ['T-shirts', 'Shorts', 'Shirts', 'Hoodie', 'Jeans'],

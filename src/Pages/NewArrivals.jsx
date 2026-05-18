@@ -1,7 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { products } from "../data";
+import { useEffect, useState } from "react";
+import { Rings } from "react-loader-spinner";
+
 
 const NewArrivals = () => {
+
+    const [loading, setLoading] = useState(true);
 
     const newarrivals = products.newArrivals;
 
@@ -11,8 +16,38 @@ const NewArrivals = () => {
         navigate(`/product/${product.id}`);
     };
 
+    useEffect(() => {
+
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 1500);
+
+        return () => clearTimeout(timer);
+
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white gap-4">
+                <div className="scale-75 sm:scale-90 md:scale-100">
+                    <Rings
+                        height="80"
+                        width="80"
+                        color="#000"
+                        ariaLabel="loading"
+                    />
+                </div>
+
+                <p className="text-sm tracking-[4px] text-gray-500 font-medium">
+                    LOADING NEW ARRIVALS...
+                </p>
+
+            </div >
+        )
+    }
+
     return (
-        <div className="W-full mx-auto px-4 py-10">
+        <div className="w-full mx-auto px-4 py-10">
 
             <div className="text-center mb-12">
                 <h1 className="text-4xl font-extrabold text-gray-900">

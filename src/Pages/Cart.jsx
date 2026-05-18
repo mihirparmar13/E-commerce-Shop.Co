@@ -4,10 +4,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { deleteCart, ChangeQuantity } from '../Feature/cartSlice.js'
 import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { Rings } from 'react-loader-spinner'
+import { useEffect, useState } from 'react'
 
 
 
 function Cart() {
+
+    const [loading, setLoading] = useState(true);
 
     const CartProduct = useSelector((state) => state.cart.cartItems)
 
@@ -45,19 +49,46 @@ function Cart() {
     const total = subtotal - discount + deliveryFee;
 
     function handleCheckout() {
-       if (CartProduct.length === 0) {
-        toast.error("Your cart is empty!");
-        return;
-    }
+        if (CartProduct.length === 0) {
+            toast.error("Your cart is empty!");
+            return;
+        }
 
-    toast.success("Proceeding to checkout...");
+        toast.success("Proceeding to checkout...");
     }
 
     // const CartProduct = cartItems;
 
+    useEffect(() => {
 
+        setTimeout(() => {
+            setLoading(false);
+        }, 1500);
+
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white gap-4">
+
+                <div className="scale-75 sm:scale-90 md:scale-100">
+                    <Rings
+                        height="80"
+                        width="80"
+                        color="#000"
+                        ariaLabel="loading"
+                    />
+                </div>
+
+                <p className="text-sm tracking-[4px] text-gray-500 font-medium">
+                    LOADING CART...
+                </p>
+
+            </div>
+        )
+    }
     return (
-        <div className='W-full'>
+        <div className='w-full'>
 
             <div className='container mx-auto px-4'>
                 <hr />
@@ -141,7 +172,7 @@ function Cart() {
 
 
                                             <RiDeleteBin5Fill
-                                                onClick={() => handleRemoveFromCart(items.cartId)}    
+                                                onClick={() => handleRemoveFromCart(items.cartId)}
                                                 className="text-red-500 cursor-pointer transition"
                                                 size={20}
                                             />

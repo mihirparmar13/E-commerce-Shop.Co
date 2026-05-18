@@ -3,16 +3,19 @@ import DressStyle from '../Components/DressStyle.jsx'
 import Hero from '../Components/Hero .jsx'
 import ProductCard from '../Components/ProductCard.jsx'
 import { products } from '../data.js'
-import { useRef } from 'react'
-
+import { useEffect, useRef, useState } from 'react'
+import { Rings } from 'react-loader-spinner'
 
 
 
 function Home() {
 
+    const [loading, setLoading] = useState(true);
+
+
     const newArrivalRef = useRef();
 
-      const scrollToProducts = () => {
+    const scrollToProducts = () => {
         newArrivalRef.current.scrollIntoView({
             behavior: "smooth"
         });
@@ -23,11 +26,34 @@ function Home() {
     const menProducts = products.Men;
     const girlsProduct = products.Girls;
 
+    useEffect(() => {
+
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000);
+
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
+                <div className="scale-75 sm:scale-90 md:scale-100">
+                    <Rings
+                        height="80"
+                        width="80"
+                        color="#000"
+                        ariaLabel="loading"
+                    />
+                </div>
+            </div>
+        )
+    }
+
 
     return (
         <div className='w-full'>
 
-            <Hero scrollToProducts={scrollToProducts}/>
+            <Hero scrollToProducts={scrollToProducts} />
 
             <div ref={newArrivalRef}>
                 <ProductCard title="NEW ARRIVALS" products={newArrivals} />

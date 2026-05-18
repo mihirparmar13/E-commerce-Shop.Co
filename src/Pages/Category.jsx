@@ -3,10 +3,12 @@ import { GiSettingsKnobs } from 'react-icons/gi'
 import { FaChevronRight } from 'react-icons/fa'
 import { IoArrowUpSharp } from 'react-icons/io5'
 import { products, filters } from '../data.js'
+import { useEffect, useState } from 'react'
+import { Rings } from 'react-loader-spinner'
 
 const Category = () => {
 
-
+    const [loading, setLoading] = useState(true);
 
     const allProducts = [
         ...products.casual.slice(0, 3),
@@ -23,6 +25,37 @@ const Category = () => {
     const colors = filters.colors;
 
     const sizes = filters.sizes;
+
+    useEffect(() => {
+
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 1500);
+
+        return () => clearTimeout(timer);
+
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white gap-4">
+
+                <div className="scale-75 sm:scale-90 md:scale-100">
+                    <Rings
+                        height="80"
+                        width="80"
+                        color="#000"
+                        ariaLabel="loading"
+                    />
+                </div>
+
+                <p className="text-sm tracking-[4px] text-gray-500 font-medium">
+                    LOADING PRODUCTS...
+                </p>
+
+            </div>
+        )
+    }
 
 
     return (
