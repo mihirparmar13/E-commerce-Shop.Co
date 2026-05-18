@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { products } from '../data'
 import SideNav from './SideNav'
 import SearchNav from './SearchNav'
+import { toast } from 'react-toastify';
 
 
 function Header() {
@@ -34,11 +35,24 @@ function Header() {
         item.title.toLowerCase().includes(search.toLowerCase())
     );
 
-    const handleLogout = (e) => {
-        e.preventDefault();
+   const [logoutLoading, setLogoutLoading] = useState(false);
+
+const handleLogout = () => {
+
+    setLogoutLoading(true);
+
+    setTimeout(() => {
+
         localStorage.removeItem("isLogin");
+
+        toast.success("Logout Successfully");
+
         navigate("/login");
-    }
+
+        setLogoutLoading(false);
+
+    }, 1500);
+};
 
     return (
         <div>
@@ -162,11 +176,22 @@ function Header() {
                             )}
 
                         </Link>
-                        <FiLogOut
-                            size={22}
-                            className="cursor-pointer"
+                        <button
                             onClick={handleLogout}
-                        />
+                            disabled={logoutLoading}
+                            className="flex items-center justify-center w-10 h-10 rounded-full  transition duration-200 group"
+                        >
+                            {
+                                logoutLoading ? (
+                                    <div className="w-5 h-5 border-2 border-gray-300 border-t-red-500 rounded-full animate-spin"></div>
+                                ) : (
+                                    <FiLogOut
+                                        size={22}
+                                        className="text-gray-700 group-hover:text-red-500 transition"
+                                    />
+                                )
+                            }
+                        </button>
                     </div>
 
                 </div>

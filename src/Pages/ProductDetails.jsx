@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { Rings } from 'react-loader-spinner'
 import { MdOutlineSettingsInputComponent } from 'react-icons/md'
 import { FaCheck, FaCheckCircle, FaChevronDown } from 'react-icons/fa'
 import { FiMoreHorizontal, FiShoppingCart } from 'react-icons/fi'
@@ -10,7 +11,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RiDeleteBinLine } from 'react-icons/ri'
 import { toast } from 'react-toastify'
 
+
 function ProductDetails() {
+
+    const [loading, setLoading] = useState(true);
+
 
     const { id } = useParams();
 
@@ -103,6 +108,35 @@ function ProductDetails() {
     ];
 
     const product = allProducts.find((item) => item.id === Number(id));
+
+    useEffect(() => {
+
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 1500);
+
+        return () => clearTimeout(timer);
+
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white">
+
+                <Rings
+                    height="80"
+                    width="80"
+                    color="#000"
+                    ariaLabel="product-loading"
+                />
+
+                <p className="mt-4 text-sm tracking-[4px] text-gray-500 font-medium">
+                    LOADING PRODUCT...
+                </p>
+
+            </div>
+        )
+    }
 
     if (!product) {
         return (
@@ -235,7 +269,7 @@ function ProductDetails() {
 
                                     <div className="flex items-center border rounded-full px-7 py-1 gap-4 shrink-0 bg-[#F0F0F0]">
                                         <button
-                                            onClick={() => handleQuantity( CheckCart && CheckCart.cartId, CheckCart.quantity, "-")}
+                                            onClick={() => handleQuantity(CheckCart && CheckCart.cartId, CheckCart.quantity, "-")}
                                             type="button"
                                             disabled={!CheckCart}
                                             id="decrement-button"
@@ -248,7 +282,7 @@ function ProductDetails() {
                                             {CheckCart ? CheckCart.quantity : 1}
                                         </span>
                                         <button
-                                            onClick={() => handleQuantity( CheckCart && CheckCart.cartId, CheckCart.quantity, "+")}
+                                            onClick={() => handleQuantity(CheckCart && CheckCart.cartId, CheckCart.quantity, "+")}
                                             type="button"
                                             disabled={!CheckCart}
                                             id="increment-button"
